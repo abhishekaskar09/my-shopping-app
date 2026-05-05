@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { createCartAsync } from './features/cart/cartSlice';
 import Navbar from './componets/Navbar';
+import Footer from './componets/Footer';
 
 
 
@@ -16,7 +17,9 @@ const App = () => {
       <main>
         <Outlet />
       </main>
+       <Footer/>
     </div>
+    
 
   )
 }

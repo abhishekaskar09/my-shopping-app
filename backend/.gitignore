@@ -1,8 +1,4 @@
 .env
 node_modules
 
-
-.vscode/
-desktop.ini
-node_modules/
-.env
+ 
