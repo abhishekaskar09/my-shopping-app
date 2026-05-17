@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { signupSchema } from '../zod/SignupSchema';
 import { useDispatch, useSelector } from 'react-redux';
-import { authRegisterAsync } from '../features/auth/signupSlice';
+import { authRegisterAsync } from '../features/auth/SignupSlice';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';

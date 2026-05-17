@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { loginSchema } from '../zod/loginSchema';
-import { clearAuthError, loginAsync } from '../features/auth/loginSlice';
+import { clearAuthError, loginAsync } from '../features/auth/LoginSlice';
 
 const Login = () => {
   //backend error handle for email&password
