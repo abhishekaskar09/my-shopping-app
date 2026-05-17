@@ -83,7 +83,7 @@ const LoginSlice = createSlice({
 });
 
 // 🔹 Export actions
-export const { clearAuthError, clearLogin } = loginSlice.actions;
+export const { clearAuthError, clearLogin } = LoginSlice.actions;
 
 // 🔹 Export reducer
 export default LoginSlice.reducer;

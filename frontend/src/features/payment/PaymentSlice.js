@@ -108,5 +108,5 @@ const PaymentSlice = createSlice({
   }
 });
 
-export const { resetPaymentState } = paymentSlice.actions;
+export const { resetPaymentState } = PaymentSlice.actions;
 export default PaymentSlice.reducer;

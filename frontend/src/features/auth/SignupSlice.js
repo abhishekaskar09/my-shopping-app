@@ -71,7 +71,7 @@ const RegisterSlice = createSlice({
 });
 
 // 🔹 Export action
-export const { clearSignup } = registerSlice.actions;
+export const { clearSignup } = RegisterSlice.actions;
 
 // 🔹 Export reducer
 export default RegisterSlice.reducer;
