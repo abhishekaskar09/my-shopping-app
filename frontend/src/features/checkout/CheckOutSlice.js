@@ -12,7 +12,7 @@ export const createCheckoutAsync = createAsyncThunk(
 
       // API call to create order/checkout
       const response = await axios.post(
-        'http://localhost:5000/api/orders/create',
+        '/api/orders/create',
         address,
         { headers: { Authorization: `Bearer ${token}` } }
       );

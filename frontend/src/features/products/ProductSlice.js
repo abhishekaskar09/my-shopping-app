@@ -12,7 +12,7 @@ export const getProductsAsync = createAsyncThunk(
     try {
       // API request to fetch products list
       const response = await axios.get(
-        `http://localhost:5000/api/products/get?pagination=${pagination}&limit=${limit}&search=${search}&category=${category}`
+        `/api/products/get?pagination=${pagination}&limit=${limit}&search=${search}&category=${category}`
       );
 
       // return fetched products data
@@ -35,7 +35,7 @@ export const getCategoryAsync = createAsyncThunk(
     try {
       // API request to fetch categories
       const response = await axios.get(
-        `http://localhost:5000/api/products/categories`
+        `/api/products/categories`
       );
 
       // return categories data

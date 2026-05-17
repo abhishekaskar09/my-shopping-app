@@ -12,7 +12,7 @@ export const createCartAsync = createAsyncThunk(
 
       // API call to create cart item
       const response = await axios.post(
-        'http://localhost:5000/api/carts/create',
+        '/api/carts/create',
         cartData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -38,7 +38,7 @@ export const deleteCartAsync = createAsyncThunk(
 
       // API call to delete product from cart
       const response = await axios.delete(
-        `http://localhost:5000/api/carts/delete/${productId}`,
+        `api/carts/delete/${productId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

@@ -8,7 +8,7 @@ export const authRegisterAsync = createAsyncThunk(
     try {
       // 🔹 Send registration request with user data
       const response = await axios.post(
-        'http://localhost:5000/api/auth/register',
+        '/api/auth/register',
         formData
       );
 

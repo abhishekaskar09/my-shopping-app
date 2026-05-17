@@ -38,7 +38,7 @@ export const verifyPaymentAsync = createAsyncThunk(
 
       // API request to verify payment
       const response = await axios.post(
-        'http://localhost:5000/api/payment/verify',
+        '/api/payment/verify',
         verifyData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
