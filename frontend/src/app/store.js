@@ -1,12 +1,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import productReducer from '../features/products/productSlice';
-import cartReducer from '../features/cart/cartSlice';
+import productReducer from '../features/products/ProductSlice';
+import cartReducer from '../features/cart/CartSlice';
 import orderReducer from '../features/checkout/CheckOutSlice';
 import paymentReducer from '../features/payment/PaymentSlice';
-import loginReducer from '../features/auth/loginSlice';
-import signupReducer from '../features/auth/signupSlice';
+import loginReducer from '../features/auth/LoginSlice';
+import signupReducer from '../features/auth/SignupSlice';
 
 const rootReducer = combineReducers({
   products: productReducer,
