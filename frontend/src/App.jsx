@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { createCartAsync } from './features/cart/cartSlice';
+import { createCartAsync } from './features/cart/CartSlice';
 import Navbar from './componets/Navbar';
 import Footer from './componets/Footer';
 
