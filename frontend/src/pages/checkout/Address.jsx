@@ -1,6 +1,6 @@
  import React, { useState } from 'react';
 import { createCheckoutAsync } from '../../features/checkout/CheckOutSlice';
-import { checkoutSchema } from '../../zod/CheckOut';
+import { CheckoutSchema } from '../../zod/CheckOut';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { processPaymentAsync } from '../../features/payment/PaymentSlice';
@@ -35,7 +35,7 @@ const Address = () => {
   const handleForm = async (e) => {
     e.preventDefault();
     try {
-      const result = await checkoutSchema.safeParse(address);
+      const result = await CheckoutSchema.safeParse(address);
 
       if (!result.success) {
         // Mapping validation issues to the error state

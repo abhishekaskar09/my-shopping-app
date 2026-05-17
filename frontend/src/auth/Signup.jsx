@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { signupSchema } from '../zod/SignupSchema';
+import { SignupSchema } from '../zod/SignupSchema';
 import { useDispatch, useSelector } from 'react-redux';
 import { authRegisterAsync } from '../features/auth/SignupSlice';
 import { FaEye } from "react-icons/fa";
@@ -37,7 +37,7 @@ const Signup = () => {
   const handleFormData = async (e) => {
     e.preventDefault();
     try {
-      const result = await signupSchema.safeParse(formData);
+      const result = await SignupSchema.safeParse(formData);
       if (!result.success) {
         const existingData = result.error.issues.reduce((accum, items) => {
           if (!accum[items.path[0]]) {

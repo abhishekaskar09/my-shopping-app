@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { loginSchema } from '../zod/loginSchema';
+import { LoginSchema } from '../zod/LoginSchema';
 import { clearAuthError, loginAsync } from '../features/auth/LoginSlice';
 
 const Login = () => {
@@ -40,7 +40,7 @@ const Login = () => {
   const handleFormData = async (e) => {
     e.preventDefault();
     try {
-      const result = await loginSchema.safeParse(formData);
+      const result = await LoginSchema.safeParse(formData);
       if (!result.success) {
         const existingData = result.error.issues.reduce((accum, items) => {
           if (!accum[items.path[0]]) {

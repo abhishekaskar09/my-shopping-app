@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const checkoutSchema = z.object({
+export const CheckoutSchema = z.object({
   street: z.string().trim()
     .min(1, { message: "Enter Your Location..." })
     .min(6, { messagee: "Address is too short" }),
