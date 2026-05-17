@@ -1,10 +1,10 @@
  import React, { useEffect, useState } from "react";
 import { FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategoryAsync, getProductsAsync } from "../features/products/productSlice";
+import { getCategoryAsync, getProductsAsync } from "../features/products/ProductSlice";
 import { useLocation, useNavigate } from "react-router-dom";
-import { clearLogin } from "../features/auth/loginSlice";
-import { clearSignup } from "../features/auth/signupSlice";
+import { clearLogin } from "../features/auth/LoginSlice";
+import { clearSignup } from "../features/auth/SignupSlice";
 
 const Navbar = () => {
 
