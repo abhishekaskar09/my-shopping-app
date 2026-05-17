@@ -1,6 +1,6 @@
  import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { authRegisterAsync } from "./signupSlice";
+import { authRegisterAsync } from "./SignupSlice";
 
 // 🔹 Async thunk for user login API call
 export const loginAsync = createAsyncThunk(
