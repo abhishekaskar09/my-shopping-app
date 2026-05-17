@@ -5,7 +5,7 @@ import { FaEyeSlash } from "react-icons/fa";
 import { loginSchema } from '../zod/loginSchema';
 import { clearAuthError, loginAsync } from '../features/auth/loginSlice';
 
-const login = () => {
+const Login = () => {
   //backend error handle for email&password
   const { error } = useSelector((state) => state.authLogin);
 
@@ -180,4 +180,4 @@ const login = () => {
   )
 }
 
-export default login;
+export default Login;
