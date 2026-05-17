@@ -4,6 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { LoginSchema } from '../zod/LoginSchema';
 import { clearAuthError, loginAsync } from '../features/auth/LoginSlice';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   //backend error handle for email&password
@@ -23,7 +24,8 @@ const Login = () => {
   const [comfirm, setComfirm] = useState(false);
 
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const navigate=useNavigate();
 
   const handleSave = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -67,6 +69,7 @@ const Login = () => {
       setComfirm(true);
       setTimeout(() => {
         setComfirm(false);
+        navigate('/')
       }, 4000);
 
       
