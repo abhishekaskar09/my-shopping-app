@@ -53,7 +53,7 @@ export const verifyPaymentAsync = createAsyncThunk(
 );
 
 // -------------------- PAYMENT SLICE --------------------
-const paymentSlice = createSlice({
+const PaymentSlice = createSlice({
   name: 'payment',
 
   // Initial state for payment module
@@ -109,4 +109,4 @@ const paymentSlice = createSlice({
 });
 
 export const { resetPaymentState } = paymentSlice.actions;
-export default paymentSlice.reducer;
+export default PaymentSlice.reducer;

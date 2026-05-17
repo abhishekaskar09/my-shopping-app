@@ -26,7 +26,7 @@ export const loginAsync = createAsyncThunk(
 );
 
 // 🔹 Create login slice
-const loginSlice = createSlice({
+const LoginSlice = createSlice({
   name: 'login',
 
   // 🔹 Initial state for authentication
@@ -86,4 +86,4 @@ const loginSlice = createSlice({
 export const { clearAuthError, clearLogin } = loginSlice.actions;
 
 // 🔹 Export reducer
-export default loginSlice.reducer;
+export default LoginSlice.reducer;

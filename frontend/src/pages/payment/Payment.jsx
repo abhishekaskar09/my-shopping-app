@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { verifyPaymentAsync, resetPaymentState } from '../../features/payment/paymentSlice'; // Ye reset action add kar niche
+import { verifyPaymentAsync, resetPaymentState } from '../../features/payment/PaymentSlice'; // Ye reset action add kar niche
 import { useNavigate } from 'react-router-dom';
 
 const Payment = () => {

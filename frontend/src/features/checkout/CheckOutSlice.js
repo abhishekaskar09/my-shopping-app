@@ -56,7 +56,7 @@ export const getCheckoutAsync = createAsyncThunk(
 );
 
 // -------------------- ORDER SLICE --------------------
-const checkSlice = createSlice({
+const CheckSlice = createSlice({
   name: 'order',
   initialState: {
     order: [],
@@ -110,4 +110,4 @@ const checkSlice = createSlice({
   }
 });
 
-export default checkSlice.reducer;
+export default CheckSlice.reducer;

@@ -1,6 +1,6 @@
  import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createCartAsync } from "../../features/cart/cartSlice";
+import { createCartAsync } from "../../features/cart/CartSlice";
 import { useNavigate } from "react-router-dom";
 
 const ProductCart = ({ data }) => {

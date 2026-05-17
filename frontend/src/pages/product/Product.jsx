@@ -1,6 +1,6 @@
  import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProductsAsync } from '../../features/products/productSlice';
+import { getProductsAsync } from '../../features/products/ProductSlice';
 import ProductCart from './ProductCart';
 
 const Product = () => {

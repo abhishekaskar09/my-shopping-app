@@ -25,7 +25,7 @@ export const authRegisterAsync = createAsyncThunk(
 );
 
 // 🔹 Create register slice
-const registerSlice = createSlice({
+const RegisterSlice = createSlice({
   name: 'register',
 
   // 🔹 Initial state for signup
@@ -74,4 +74,4 @@ const registerSlice = createSlice({
 export const { clearSignup } = registerSlice.actions;
 
 // 🔹 Export reducer
-export default registerSlice.reducer;
+export default RegisterSlice.reducer;

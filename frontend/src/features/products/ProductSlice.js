@@ -51,7 +51,7 @@ export const getCategoryAsync = createAsyncThunk(
 );
 
 // -------------------- PRODUCT SLICE --------------------
-const productSlice = createSlice({
+const ProductSlice = createSlice({
   name: 'products',
 
   // initial state for product module
@@ -95,4 +95,4 @@ const productSlice = createSlice({
   }
 });
 
-export default productSlice.reducer;
+export default ProductSlice.reducer;

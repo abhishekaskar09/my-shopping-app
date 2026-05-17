@@ -54,7 +54,7 @@ export const deleteCartAsync = createAsyncThunk(
 );
 
 // -------------------- CART SLICE --------------------
-const cartSlice = createSlice({
+const CartSlice = createSlice({
   name: 'carts',
 
   // initial state for cart module
@@ -97,4 +97,4 @@ const cartSlice = createSlice({
   }
 });
 
-export default cartSlice.reducer;
+export default CartSlice.reducer;

@@ -1,6 +1,6 @@
  import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createCartAsync, deleteCartAsync } from '../../features/cart/cartSlice'
+import { createCartAsync, deleteCartAsync } from '../../features/cart/CartSlice'
 
 const CartItems = ({ cartData }) => {
   const dispatch = useDispatch();
