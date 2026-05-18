@@ -6,13 +6,13 @@ import axios from 'axios';
 export const getProductsAsync = createAsyncThunk(
   'api/get',
   async (
-    { pagination = 1, limit = 12, search = "", category = "All" },
+    { pagination = 1, limit = 12, search = "" },
     { rejectWithValue }
   ) => {
     try {
       // API request to fetch products list
       const response = await axios.get(
-        `/api/products/get?pagination=${pagination}&limit=${limit}&search=${search}&category=${category}`
+        `/api/products/get?pagination=${pagination}&limit=${limit}&search=${search}`
       );
 
       // return fetched products data
