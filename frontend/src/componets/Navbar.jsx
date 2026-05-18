@@ -36,10 +36,7 @@ const Navbar = () => {
     );
   }, [dispatch, search]);
 
-  // 🔹 Fetch all categories (runs once on mount)
-  useEffect(() => {
-    dispatch(getCategoryAsync());
-  }, [dispatch]);
+ 
 
   // 🔹 Handle user logout (clear Redux + local storage)
   const handleLogoutbtn = async () => {
