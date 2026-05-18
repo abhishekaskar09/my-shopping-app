@@ -41,8 +41,7 @@ const ProductSlice = createSlice({
     totalPages: null,
     currentPage: 1,
     LocalSearch: "",
-    LocalCategory: "All",
-    loading: false,
+     loading: false,
     error: null,
   },
 
@@ -59,8 +58,7 @@ const ProductSlice = createSlice({
         state.totalPages = action.payload.totalPages;
         state.currentPage = action.payload.currentPage;
         state.LocalSearch = action.payload.search;
-        state.LocalCategory = action.payload.category;
-      })
+       })
       .addCase(getProductsAsync.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;

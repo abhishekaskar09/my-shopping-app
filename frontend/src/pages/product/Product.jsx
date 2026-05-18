@@ -8,7 +8,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   // Extracting product related state from Redux store
-  const { products, loading, totalPages, currentPage, LocalSearch, LocalCategory } =
+  const { products, loading, totalPages, currentPage, LocalSearch } =
     useSelector((state) => state.products);
 
    const [pagination, setPagination] = useState(1);
@@ -16,11 +16,10 @@ const Product = () => {
   useEffect(() => {
     dispatch(getProductsAsync({
       search: LocalSearch,
-      category: LocalCategory,
-      pagination
+       pagination
     }));
 
-  }, [dispatch, pagination, LocalSearch, LocalCategory]);
+  }, [dispatch, pagination, LocalSearch]);
 
   return (
     // Main container with background gradient styling

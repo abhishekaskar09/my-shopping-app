@@ -7,7 +7,7 @@ exports.getProducts = async (req, res) => {
       pagination = 1,
       limit = 12,
       search = "",
-      category = "All"
+   
     } = req.query;
 
     const page = Number(pagination);
@@ -21,10 +21,7 @@ exports.getProducts = async (req, res) => {
       query.title = { $regex: search, $options: "i" };
     }
 
-    // ✅ CATEGORY FILTER
-    if (category && category !== "all") {
-      query.category = category;
-    }
+  
 
     const products = await Product.find(query)
       .sort({ createdAt: -1 })
@@ -40,8 +37,7 @@ exports.getProducts = async (req, res) => {
       currentPage: page,
       totalPages: Math.ceil(totalProducts / limitNum),
       search:search,
-      category:category,
-    });
+     });
 
   } catch (error) {
     console.log('Fetch get products Not Founds!', error);

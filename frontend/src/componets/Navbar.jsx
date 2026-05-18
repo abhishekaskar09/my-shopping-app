@@ -1,7 +1,7 @@
  import React, { useEffect, useState } from "react";
 import { FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { getCategoryAsync, getProductsAsync } from "../features/products/ProductSlice";
+import {getProductsAsync } from "../features/products/ProductSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import { clearLogin } from "../features/auth/LoginSlice";
 import { clearSignup } from "../features/auth/SignupSlice";
@@ -21,9 +21,7 @@ const Navbar = () => {
   // 🔹 Local state for search input
   const [search, setSearch] = useState("");
 
-  // 🔹 Local state for selected category filter
-  const [category, setCategory] = useState("All");
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,11 +31,10 @@ const Navbar = () => {
     dispatch(
       getProductsAsync({
         search: search,
-        category: category,
         pagination: 1,
       })
     );
-  }, [dispatch, search, category]);
+  }, [dispatch, search]);
 
   // 🔹 Fetch all categories (runs once on mount)
   useEffect(() => {
