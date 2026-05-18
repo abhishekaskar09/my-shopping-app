@@ -6,7 +6,7 @@ import axios from 'axios';
 export const getProductsAsync = createAsyncThunk(
   'api/get',
   async (
-    { pagination = 1, limit = 12, search = "", category = "all" },
+    { pagination = 1, limit = 12, search = "", category = "All" },
     { rejectWithValue }
   ) => {
     try {
