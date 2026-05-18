@@ -1,7 +1,7 @@
  import React, { useEffect, useState } from "react";
 import { FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import {getProductsAsync } from "../features/products/ProductSlice";
+import { getCategoryAsync, getProductsAsync } from "../features/products/ProductSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 import { clearLogin } from "../features/auth/LoginSlice";
 import { clearSignup } from "../features/auth/SignupSlice";
@@ -16,12 +16,14 @@ const Navbar = () => {
   const { carts } = useSelector((state) => state.carts);
 
   // 🔹 Get products and categories from Redux store
-  const { products } = useSelector((state) => state.products);
+  const { products, categories } = useSelector((state) => state.products);
 
   // 🔹 Local state for search input
   const [search, setSearch] = useState("");
 
-  
+  // 🔹 Local state for selected category filter
+  const [category, setCategory] = useState("All");
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -31,12 +33,16 @@ const Navbar = () => {
     dispatch(
       getProductsAsync({
         search: search,
+        category: category,
         pagination: 1,
       })
     );
-  }, [dispatch, search]);
+  }, [dispatch, search, category]);
 
- 
+  // 🔹 Fetch all categories (runs once on mount)
+  useEffect(() => {
+    dispatch(getCategoryAsync());
+  }, [dispatch]);
 
   // 🔹 Handle user logout (clear Redux + local storage)
   const handleLogoutbtn = async () => {
@@ -70,6 +76,19 @@ const Navbar = () => {
 
             {/* 🔹 Search + Category Filter */}
             <div className="flex items-center gap-3 flex-1 max-w-xl">
+
+              {/* Category Dropdown */}
+              <select
+                className="bg-black font-semibold text-white border rounded-md px-3 py-2 outline-none hover:bg-[#2d2434] transition"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                {Array.isArray(categories) && categories?.map((item) => (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
 
               {/* Search Input */}
               <div className="flex items-center w-full bg-gray-100 border rounded-md px-3 py-2 hover:bg-gray-200 focus-within:ring-2 focus-within:ring-gray-300 transition">
