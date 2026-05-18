@@ -22,7 +22,7 @@ exports.getProducts = async (req, res) => {
     }
 
     // ✅ CATEGORY FILTER
-    if (category && category !== "All") {
+    if (category && category !== "all") {
       query.category = category;
     }
 
