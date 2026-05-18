@@ -30,7 +30,7 @@ export const getProductsAsync = createAsyncThunk(
 // -------------------- FETCH CATEGORIES --------------------
 // API call to get all product categories
 export const getCategoryAsync = createAsyncThunk(
-  '/api/category',
+  '/api/getCategory',
   async (_, { rejectWithValue }) => {
     try {
       // API request to fetch categories
