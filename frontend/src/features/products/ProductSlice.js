@@ -27,28 +27,7 @@ export const getProductsAsync = createAsyncThunk(
   }
 );
 
-// -------------------- FETCH CATEGORIES --------------------
-// API call to get all product categories
-export const getCategoryAsync = createAsyncThunk(
-  '/api/getCategory',
-  async (_, { rejectWithValue }) => {
-    try {
-      // API request to fetch categories
-      const response = await axios.get(
-        `/api/products/categories`
-      );
-
-      // return categories data
-      return response.data;
-    } catch (error) {
-      // log error for debugging
-      console.log('Fetch products Not Founds in getCategory', error);
-
-      // return backend error message
-      return rejectWithValue(error.response?.data?.message);
-    }
-  }
-);
+ 
 
 // -------------------- PRODUCT SLICE --------------------
 const ProductSlice = createSlice({
@@ -57,7 +36,7 @@ const ProductSlice = createSlice({
   // initial state for product module
   initialState: {
     products: [],
-    categories: [],
+   
     totalProducts: 0,
     totalPages: null,
     currentPage: 1,
@@ -88,10 +67,6 @@ const ProductSlice = createSlice({
       })
 
       // -------------------- GET CATEGORIES --------------------
-      .addCase(getCategoryAsync.fulfilled, (state, action) => {
-        state.loading = false;
-        state.categories = action.payload;
-      });
   }
 });
 

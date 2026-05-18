@@ -49,14 +49,4 @@ exports.getProducts = async (req, res) => {
   }
 }
 
-
-exports.getCategories=async(req,res)=>{
-  try {
-    const categories=await Product.distinct("category");
-    res.status(200).json(['All',...categories]);
-  } catch (error) {
-    console.log('error in controller in getCategory');
-    
-    res.status(500).json({message:'error in getCategories in controller',message:error.message});
-  }
-}
+ 

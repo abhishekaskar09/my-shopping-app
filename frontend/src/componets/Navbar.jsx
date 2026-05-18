@@ -16,7 +16,7 @@ const Navbar = () => {
   const { carts } = useSelector((state) => state.carts);
 
   // 🔹 Get products and categories from Redux store
-  const { products, categories } = useSelector((state) => state.products);
+  const { products } = useSelector((state) => state.products);
 
   // 🔹 Local state for search input
   const [search, setSearch] = useState("");
@@ -76,19 +76,6 @@ const Navbar = () => {
 
             {/* 🔹 Search + Category Filter */}
             <div className="flex items-center gap-3 flex-1 max-w-xl">
-
-              {/* Category Dropdown */}
-              <select
-                className="bg-black font-semibold text-white border rounded-md px-3 py-2 outline-none hover:bg-[#2d2434] transition"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                {Array.isArray(categories) && categories?.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
 
               {/* Search Input */}
               <div className="flex items-center w-full bg-gray-100 border rounded-md px-3 py-2 hover:bg-gray-200 focus-within:ring-2 focus-within:ring-gray-300 transition">
