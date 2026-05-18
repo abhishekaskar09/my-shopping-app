@@ -83,7 +83,7 @@ const Navbar = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                {categories?.map((item) => (
+                {Array.isArray(categories) && categories?.map((item) => (
                   <option key={item} value={item}>
                     {item}
                   </option>

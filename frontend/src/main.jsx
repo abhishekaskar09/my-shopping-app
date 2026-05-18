@@ -6,7 +6,9 @@ import { PersistGate } from 'redux-persist/integration/react';
  import { RouterProvider } from 'react-router-dom';
 import { router } from './Routes';
 import { persistor, store } from './app/store';
- 
+import axios from 'axios';
+
+   
 ReactDOM.createRoot(document.getElementById('root')).render(
 
   <Provider store={store}>

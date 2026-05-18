@@ -1,4 +1,4 @@
-  {
+ {
   "version": 2,
   "builds": [
     {
@@ -11,15 +11,14 @@
       "config": { "distDir": "dist" }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "backend/index.js"
+      "source": "/api/:path*",
+      "destination": "/backend/index.js"
     },
     {
       "source": "/(.*)",
-      "destination": "frontend/$1",
-      "check": true
+      "destination": "/frontend/$1"
     }
   ]
 }
