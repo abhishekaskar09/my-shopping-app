@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { authRegisterAsync } from '../features/auth/SignupSlice';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   // formData Inputs
@@ -186,12 +186,12 @@ const Signup = () => {
         </div>
  <p className="text-sm font-medium text-gray-400 mt-4 text-center">
   User already?{' '}
-  <a 
-    href="/login" 
+  <Link 
+    to="/login" 
     className="text-white hover:text-green-400 font-bold underline underline-offset-4 decoration-2 transition-all duration-300 hover:scale-105 inline-block"
   >
     Login
-  </a>
+  </Link>
 </p>
 
       </form>

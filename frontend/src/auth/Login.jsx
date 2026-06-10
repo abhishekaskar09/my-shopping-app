@@ -4,7 +4,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { LoginSchema } from '../zod/LoginSchema';
 import { clearAuthError, loginAsync } from '../features/auth/LoginSlice';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';  
 
 const Login = () => {
   //backend error handle for email&password
@@ -168,12 +168,12 @@ const Login = () => {
           </button>
          <p className="text-sm font-semibold text-gray-400 mt-4 text-center">
   Create Account?{' '}
-  <a 
-    href="/signup" 
+  <Link 
+    to="/signup" 
     className="text-white hover:text-green-400 font-bold underline underline-offset-4 decoration-2 transition-all duration-300 hover:scale-105 inline-block"
   >
     Signup
-  </a>
+  </Link>
 </p>
         </div>
 
