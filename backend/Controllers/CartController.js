@@ -21,7 +21,7 @@ exports.createCart = async (req, res) => {
 
       return res.status(200).json({ message: 'cart items are updated', carts: updatedCart.products, totalItems: totalItems, totalPrice: totalPrice });
     }
-    else {
+    else { 
       const newCart = await Cart.create({
         userId,
         products: [{ productId, quantity }],
@@ -68,7 +68,7 @@ exports.updatedCart = async (req, res) => {
       return res.status(404).json({ message: "Cart are Empty!" });
     }
 
-    // 1. Product find
+    // 1. Product findz
     const itemIndex = cart.products.findIndex(
       (p) => p.productId.toString() === productId
     );

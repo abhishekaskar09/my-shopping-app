@@ -44,7 +44,7 @@ const Navbar = () => {
     dispatch(getCategoryAsync());
   }, [dispatch]);
 
-  // 🔹 Handle user logout (clear Redux + local storage)
+  // 🔹 Handle user logout (clear Redux + loc al storage)
   const handleLogoutbtn = async () => {
     try {
       dispatch(clearLogin());
