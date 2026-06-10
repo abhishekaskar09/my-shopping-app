@@ -45,7 +45,7 @@ exports.getProducts = async (req, res) => {
 
   } catch (error) {
     console.log('Fetch get products Not Founds!', error);
-    res.status(500).json({ message: 'Fetch get products Not Founds!', message: error.message })
+    res.status(500).json({ message: 'Fetch get products Not Founds!', error: error.message })
   }
 }
 
@@ -57,6 +57,6 @@ exports.getCategories=async(req,res)=>{
   } catch (error) {
     console.log('error in controller in getCategory');
     
-    res.status(500).json({message:'error in getCategories in controller',message:error.message});
+    res.status(500).json({message:'error in getCategories in controller',error:error.message});
   }
 }
