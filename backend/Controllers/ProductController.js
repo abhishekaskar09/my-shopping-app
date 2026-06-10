@@ -27,7 +27,6 @@ exports.getProducts = async (req, res) => {
     }
 
     const products = await Product.find(query)
-      .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limitNum);
       
