@@ -124,8 +124,8 @@ const CartItems = ({ cartData }) => {
           </span>
 
           {/* Increase quantity button */}
-          <button
-            onClick={() => handleQuantity('Add')}
+            <button
+              onClick={() => handleQuantity('Add')}
             className="w-11 h-11 flex items-center cursor-pointer justify-center rounded-xl bg-white/5 border text-white hover:bg-green-500/20 transition"
           >
             +
