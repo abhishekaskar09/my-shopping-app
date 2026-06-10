@@ -113,7 +113,7 @@ const CartItems = ({ cartData }) => {
           {/* Decrease quantity button */}
           <button
             onClick={() => handleQuantity('Minus')}
-            className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 border text-white hover:bg-red-500/20 transition"
+            className="w-11 h-11 flex cursor-pointer items-center justify-center rounded-xl bg-white/5 border text-white hover:bg-red-500/20 transition"
           >
             −
           </button>
@@ -126,7 +126,7 @@ const CartItems = ({ cartData }) => {
           {/* Increase quantity button */}
           <button
             onClick={() => handleQuantity('Add')}
-            className="w-11 h-11 flex items-center justify-center rounded-xl bg-white/5 border text-white hover:bg-green-500/20 transition"
+            className="w-11 h-11 flex items-center cursor-pointer justify-center rounded-xl bg-white/5 border text-white hover:bg-green-500/20 transition"
           >
             +
           </button>
