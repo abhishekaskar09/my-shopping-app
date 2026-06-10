@@ -15,9 +15,23 @@ const CartRoutes = require("./routes/CartRoutes");
 const OrderRoutes = require("./routes/OrderRoutes");
 const paymentRoutes = require("./routes/PaymentRoutes");
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.log("❌ DB Connection Error:", err));
+ const connectDB = async () => {
+  
+   if (mongoose.connection.readyState >= 1) return;
+  
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ MongoDB connected via serverless wrapper");
+  } catch (err) {
+    console.log("❌ DB Connection Error:", err);
+  }
+};
+
+// 2. हर एपीआई रिक्वेस्ट आने पर कनेक्शन एश्योर करने का मिडलवेयर
+app.use(async (req, res, next) => {
+  await connectDB();
+  next();
+});
 
 app.use("/api/products", ProductRoutes);
 app.use("/api/auth", AuthRoutes);
